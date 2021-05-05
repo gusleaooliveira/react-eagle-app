@@ -6,3 +6,12 @@
 .font-google {
     font-family: 'Merriweather', serif;
 }
+
+.row {
+    display: flex
+    
+}
+
+.row-right {
+    justify-content: flex-end
+}

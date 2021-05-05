@@ -6,15 +6,21 @@ import IconeUsuario from '../IconeUsuario';
 function Login(props){
     return  <section className="padding-10 margin-10 card light-gray display-container">
                 
+                <h3 className="text-center">Login</h3>
+                
                 <div className="text-center  padding-16">
                     <IconeUsuario />
                 </div>
-                
+                                
                 <label htmlFor="email">Email:</label>
                 <input type="email" placeholder="Digite seu email" id="email" className="white input border-bottom-eggplant-focus" />
                 
                 <label htmlFor="senha">Senha:</label>
                 <input type="password" placeholder="Digite sua senha" id="senha" className="white input border-bottom-eggplant-focus" />
+                
+                <div className="row row-right">
+                    <a href="" className="margin-top-5 text-blue ">Cadastre-se</a>
+                </div>
                 
                 <button className="btn btn-block eggplant margin-top-5">
                     <span>Logar </span>
