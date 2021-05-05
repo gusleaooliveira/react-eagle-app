@@ -66,7 +66,7 @@ let listaUsuarios = [
 function App() {
   return (
     <React.Fragment>
-        <ListarContatos lista={listaUsuarios} />
+        <CadastrarContato />
     </React.Fragment>
   );
 }

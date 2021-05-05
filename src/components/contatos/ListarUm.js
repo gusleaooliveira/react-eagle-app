@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faTimes, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import IconeUsuario from '../IconeUsuario';
 
 function ListarUm(props){
-    return  <div>
+    return  <div >
                 {props.lista.map((item, indice) => {
                         console.log(item)
                         return <section className="padding-10 margin-10 card light-gray display-container">
@@ -26,6 +26,10 @@ function ListarUm(props){
                                     </button>
                                 </section>
                 })}
+                
+                <button className="btn teal display-bottom-right margin-16">
+                    <FontAwesomeIcon icon={faArrowCircleLeft} />
+                </button>
             </div>;
 }
 

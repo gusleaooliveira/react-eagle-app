@@ -1,10 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faAt } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import IconeUsuario from '../IconeUsuario';
 
 function CadastrarUm(props){
-    return  <section className="padding-10 margin-10 card light-gray display-container">
+    return  <div>
+            <section className="padding-10 margin-10 card light-gray display-container">
                 
                 <h3 className="text-center">Cadastrar Contato</h3>
                 
@@ -23,7 +24,12 @@ function CadastrarUm(props){
                     <FontAwesomeIcon icon={faUserPlus} />
                 </button>
                 
-            </section>;
+                
+            </section>
+            <button className="btn teal display-bottom-right margin-16">
+                    <FontAwesomeIcon icon={faArrowCircleLeft} />
+                </button>
+                </div>;
 }
 
 export default CadastrarUm;
