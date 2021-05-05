@@ -8,6 +8,8 @@ import CadastrarContato from './components/contatos/CadastrarUm'
 import ListarContato from './components/contatos/ListarUm'
 import usuario from './usuario.svg'
 import Mensagem from './components/mensagens/ListarUm'
+import Mensagens from './components/mensagens/ListarTodas'
+import ListarContatos from './components/contatos/ListarTodos'
 
 let contatoUnico = [
     {nome: "Usuário Novo", icone: usuario, email: "novo.usuario@gmail.com" }
@@ -29,13 +31,42 @@ let mensagens = [
 
 
 let listaMensagens = [
-    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    {nome: "Usuário novo", icone: usuario, mensagem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+]
+
+let listaUsuarios = [
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
+    {nome: "Usuário novo", icone: usuario},
 ]
 
 function App() {
   return (
     <React.Fragment>
-        
+        <ListarContatos lista={listaUsuarios} />
     </React.Fragment>
   );
 }

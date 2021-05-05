@@ -11,6 +11,13 @@
     display: flex
     
 }
+.column {
+    display: flex;
+}
+
+.column-center {
+    align-self: center
+}
 
 .row-right {
     justify-content: flex-end
@@ -25,4 +32,15 @@
 
 .altura {
     min-height: 100vh
+}
+
+.btn-left {
+    text-align: left !important
+}
+
+.text-maximum {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 280px;
 }
