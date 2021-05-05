@@ -15,3 +15,14 @@
 .row-right {
     justify-content: flex-end
 }
+
+.col-10 {
+    flex-grow: 10;
+}
+.col-2 {
+    flex-grow: 2;
+}
+
+.altura {
+    min-height: 100vh
+}
