@@ -27,7 +27,7 @@ function ListarUm(props){
                                 </section>
                 })}
                 
-                <button className="btn teal display-bottom-right margin-16">
+                <button className="btn teal display-bottom-right btn-float">
                     <FontAwesomeIcon icon={faArrowCircleLeft} />
                 </button>
             </div>;

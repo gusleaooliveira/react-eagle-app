@@ -16,7 +16,7 @@ function ListarUm(props){
                 })}
                 
             </div>
-            <div className="row sticky-bottom padding-5 raisin-black">
+            <div className="row sticky-bottom padding-5 card-mensagem  raisin-black">
                 <input type="text"  placeholder="Enivar mensagem" className="white input  border-bottom-eggplant-focus col-10" />
                 <button className="btn eggplant col-2">
                     <span className="hide-on-mobile">Enviar </span>

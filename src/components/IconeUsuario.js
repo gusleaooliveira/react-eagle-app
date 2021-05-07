@@ -1,7 +1,10 @@
 import React from 'react';
 import usuario  from '../../src/usuario.svg'
 
-function IconeUsuario(props){    
+function IconeUsuario(props){  
+    if(props.tipo == "login"){
+        return <div></div>
+    }
     if(props.icone == undefined){
         return <img src={usuario} className="icon-large border-circle" />
     }

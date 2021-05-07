@@ -23,8 +23,14 @@
     justify-content: flex-end
 }
 
+.col-9 {
+    flex-grow: 9;
+}
 .col-10 {
     flex-grow: 10;
+}
+.col-1 {
+    flex-grow: 1;
 }
 .col-2 {
     flex-grow: 2;
@@ -36,6 +42,18 @@
 
 .btn-left {
     text-align: left !important
+}
+.btn-float {
+    margin-bottom: 80px;
+    margin-right: 16px;
+}
+.card-mensagem {
+    margin-bottom: calc(23px + 20px);
+    position: absolute;
+    bottom: calc(23px + 20px);
+    z-index: 9999;
+    left: 0;
+    
 }
 
 .text-maximum {
