@@ -13,6 +13,7 @@
 }
 .column {
     display: flex;
+    flex-direction: column;
 }
 
 .column-center {

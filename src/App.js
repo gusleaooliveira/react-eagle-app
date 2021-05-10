@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './css/estilo.css';
 import './css/hcw.min.css';
 import IconeUsuario from './components/IconeUsuario';
@@ -21,7 +21,9 @@ import {
   IfFirebaseAuthedAnd
 } from "@react-firebase/auth";
 import { firebaseConfig } from "./Config";
-import {BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import ListarTodos from './components/contatos/ListarTodos';
+import { useState } from 'react/cjs/react.development';
 
 let contatoUnico = [
     {nome: "Usuário Novo", icone: usuario, email: "novo.usuario@gmail.com" }
@@ -75,24 +77,64 @@ let listaUsuarios = [
     {nome: "Usuário novo", icone: usuario},
 ]
 
-function App() {
+function App(props) {
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(()=>{
+    console.log('Logado:',isLogged);
+  })
+
   return (
     <React.Fragment>
+      <div className="display-container">
         <FirebaseAuthProvider firebase={fire.default} {...firebaseConfig}>
+          <FirebaseAuthConsumer>
+            {({isSignedIn, user, providerId})=>{
+              if(isSignedIn)setIsLogged(true)
+              else setIsLogged(false)
+            }}
+          </FirebaseAuthConsumer>
+
+            
+            
+
+
             <Router>
               <Switch>
-                <Route path="/login">
-                  <Login />
-                </Route>
-                <Route path="/cadastro">
-                  <Cadastrar />
-                </Route>
-                <Redirect from="*" to="/login" />
-              </Switch>
 
+
+                <Route path="/login" render={()=>(
+                    <div>
+                      {isLogged ? <Redirect to="/mensagens" /> : <Login /> }
+                    </div>
+                )} />
+
+                <Route path="/cadastro" render={()=>(
+                    <div>
+                      {isLogged ? <Redirect to="/mensagens" /> : <Cadastrar /> }
+                    </div>
+                )} />
+
+
+                <Route path="/mensagens" render={()=>(
+                    <div>
+                      {isLogged ? <Mensagens lista={listaMensagens} /> : <Redirect to="/login" /> }
+                    </div>
+                )} />
+
+                <Route path="/contatos" render={()=>(
+                    <div>
+                      {isLogged ? <ListarContatos lista={listaUsuarios} /> : <Redirect to="/login" /> }
+                    </div>
+                )} />
+
+                <Redirect from="*" to="/login" />
+               
+              </Switch>
               <Menu />
             </Router>
-        </FirebaseAuthProvider> 
+        </FirebaseAuthProvider>
+        </div> 
     </React.Fragment>
   );
 }

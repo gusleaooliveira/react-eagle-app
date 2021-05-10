@@ -2,9 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faShare } from '@fortawesome/free-solid-svg-icons';
 import IconeUsuario from '../IconeUsuario';
+import Cabecalho from '../Cabecalho';
 
 function ListarTodos(props){
     return  <div>
+            <Cabecalho />
             <div className="padding-10 display-container">
                 {props.lista.map((item, indice) => {
                     return  <button className="btn btn-block btn-left eggplant margin-top-5 ">
