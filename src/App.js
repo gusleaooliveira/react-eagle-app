@@ -90,13 +90,16 @@ function App(props) {
         <FirebaseAuthProvider firebase={fire.default} {...firebaseConfig}>
           <FirebaseAuthConsumer>
             {({isSignedIn, user, providerId})=>{
+              console.log(user);
               if(isSignedIn)setIsLogged(true)
               else setIsLogged(false)
             }}
           </FirebaseAuthConsumer>
 
             
-            
+          
+
+
 
 
             <Router>

@@ -7,7 +7,9 @@ import Cabecalho from '../Cabecalho';
 
 function Cadastro(props){
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('senha')
+    const [senha, setSenha] = useState('')
+    const [nome, setNome] = useState('');
+    const [telefone, setTelefone] = useState('');
 
     return  <div>
             <Cabecalho path="/login" />
@@ -20,6 +22,12 @@ function Cadastro(props){
                     <IconeUsuario />
                 </div>
                 
+                <label htmlFor="nome">Nome:</label>
+                <input type="text" placeholder="Digite seu nome"  onFocus={(e)=>setNome(e.target.value)} onChange={(e)=>setNome(e.target.value)} className="white input border-bottom-eggplant-focus" />
+
+                <label htmlFor="telefone">Telefone:</label>
+                <input type="tel" placeholder="Digite seu telefone" onFocus={(e)=>setTelefone(e.target.value)} onChange={(e)=>setTelefone(e.target.value)} className="white input border-bottom-eggplant-focus" />
+
                 <label htmlFor="email">Email:</label>
                 <input type="email" placeholder="Digite seu email" onFocus={(e)=>setEmail(e.target.value)} onChange={(e)=>setEmail(e.target.value)}  className="white input border-bottom-eggplant-focus" />
                 
@@ -28,10 +36,23 @@ function Cadastro(props){
                 
                 <button className="btn btn-block eggplant margin-top-5" onClick={()=>{
                     const googleAuthProvider = new fire.default.auth.GoogleAuthProvider();
+                
                     fire.default.auth().createUserWithEmailAndPassword(email, senha)
                         .then((userCredential)=>{
-                            fire.default.auth().signOut();
-                            alert('Usuário Cadastrado corretamente!')
+                            let user = userCredential.user;
+                            user.updateProfile({
+                                displayName: nome,
+                                phoneNumber: telefone
+                            })
+                            .then((userCredential)=>{
+                                alert('Usuário cadastrado corretamente!')
+                                fire.default.auth().signOut();
+                            })
+                            .catch((error)=>{
+                                alert('Erro ao cadastrar!')
+                                alert(error.message)
+                            })
+
                             console.log(userCredential)
                         })
                         .catch((error) => {
@@ -39,6 +60,8 @@ function Cadastro(props){
                             alert(error.message)
                             console.log(error);
                         })
+
+                    
                     fire.default.auth().signOut();
                 }}>
                     <span>Cadastrar </span>
