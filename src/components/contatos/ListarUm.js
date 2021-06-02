@@ -2,9 +2,22 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faTimes, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import IconeUsuario from '../IconeUsuario';
+import { useParams } from 'react-router-dom';
+import Cabecalho from '../Cabecalho';
 
 function ListarUm(props){
+    let { id } = useParams();
+    
     return  <div >
+                <Cabecalho />
+                {console.error('ID:', id)}            
+            </div>;
+}
+
+export default ListarUm;
+
+
+{/* <p>{id}</p>
                 {props.lista.map((item, indice) => {
                         console.log(item)
                         return <section className="padding-10 margin-10 card light-gray display-container">
@@ -25,12 +38,4 @@ function ListarUm(props){
                                         <FontAwesomeIcon icon={faTimes} />
                                     </button>
                                 </section>
-                })}
-                
-                <button className="btn teal display-bottom-right btn-float">
-                    <FontAwesomeIcon icon={faArrowCircleLeft} />
-                </button>
-            </div>;
-}
-
-export default ListarUm;
+                })} */}

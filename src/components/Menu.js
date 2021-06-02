@@ -1,4 +1,4 @@
-import { faAddressBook, faComment, faComments, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAddressBook, faComment, faComments, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import * as fire from "firebase/app";
@@ -8,10 +8,13 @@ import {
   IfFirebaseAuthed,
   IfFirebaseAuthedAnd
 } from "@react-firebase/auth";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 function Menu(props){
+
+
     return  <FirebaseAuthConsumer>
+
             {({isSignedIn, user, providerId})=>{
                 if(isSignedIn == true){
                     return <nav className="bar bar-mobile raisin-black padding-5">
@@ -31,6 +34,10 @@ function Menu(props){
                                     <span className="hide-on-mobile">Logout</span>
                                     <FontAwesomeIcon icon={faSignOutAlt} />
                                 </button>
+
+                                <Link className="btn btn-block teal " to="/contatos-cadastrar" >
+                                    <FontAwesomeIcon icon={faUserPlus} />
+                                </Link>
                              </nav>
                         }
 
